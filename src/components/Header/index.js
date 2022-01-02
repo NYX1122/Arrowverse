@@ -1,14 +1,18 @@
 import React from 'react';
-import { Grid, Box, Typography } from '@mui/material';
+import { Box, Typography, AppBar, Toolbar, IconButton } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 
 function Header() {
-    return(
-        <Box sx={{ width: 'fill', height: 80, bgcolor: 'primary.main', boxShadow: 3 }}>
-            <Grid container spacing={2}>
-                <Grid item xs={3}>
-                    <Typography sx={{ variant: 'h1' }}>Arrowverse</Typography>
-                </Grid>
-            </Grid>
+    return (
+        <Box sx={{ flexGrow: 1 }}>
+            <AppBar position="static">
+                <Toolbar>
+                    <Typography sx={{ variant: 'h1', display: 'flex', fontWeight: 'bold', fontSize: 40, textAlign: 'left', flexGrow: 1 }}>Arrowverse</Typography>
+                    <IconButton size="large" color="inherit" aria-label="menu">
+                        <MenuIcon/>
+                    </IconButton>
+                </Toolbar>
+            </AppBar>
         </Box>
     );
 }

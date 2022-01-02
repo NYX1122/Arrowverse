@@ -1,6 +1,9 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
+import '@fontsource/roboto/300.css';
 
-const theme = createTheme({
+const font = 'Roboto';
+
+var theme = createTheme({
     palette: {
         type: 'light',
         primary: {
@@ -19,6 +22,15 @@ const theme = createTheme({
             default: '#fafafa',
         },
     },
-})
+    components: {
+        MuiTypography: {
+            defaultProps: {
+                fontFamily: font
+            }
+        }
+    }
+});
+
+theme = responsiveFontSizes(theme);
 
 export default theme;
