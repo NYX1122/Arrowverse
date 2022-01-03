@@ -18,7 +18,17 @@ function MovieCard( { cardData: { showData } } ) {
             </Grid>
             <Grid item xs={4}>
                 <Box>
-                    <Typography variant='h2' sx={{ backgroundColor: 'secondary.main', color: 'primary.main' }}>{showData.name}</Typography>
+                    <Button variant='contained'>Info</Button>
+                </Box>
+            </Grid>
+            <Grid item xs={4}>
+                <Box>
+                    <Typography className='landingCardTitles' variant='h2' sx={{ backgroundColor: 'secondary.main', color: 'primary.main' }}>{showData.name}</Typography>
+                </Box>
+            </Grid>
+            <Grid item xs={4}>
+                <Box>
+                    <Button variant='contained'>Cast</Button>
                 </Box>
             </Grid>
         </Grid>
