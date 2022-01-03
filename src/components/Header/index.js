@@ -17,11 +17,11 @@ function Header() {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
-                <Toolbar>
-                    <Typography sx={{ variant: 'h1', display: 'flex', fontWeight: 'bold', fontSize: 40, textAlign: 'left', flexGrow: 1 }}>Arrowverse</Typography>
-                    <IconButton size="large" color="inherit" id="menu-button" 
+                <Toolbar sx={{ backgroundColor: '#000000' }}>
+                    <Typography sx={{ variant: 'h1', display: 'flex', fontWeight: 'bold', fontSize: 40, textAlign: 'left', flexGrow: 1, color: 'primary.main'}}>ShowViewer</Typography>
+                    <IconButton size='large' id='menu-button' sx={{ color: 'primary.main' }}
                         aria-controls={open ? 'menu' : undefined}
-                        aria-haspopup="true"
+                        aria-haspopup='true'
                         aria-expanded={open ? 'true' : undefined}
                         onClick={handleClick}
                     >
@@ -29,10 +29,10 @@ function Header() {
                     </IconButton>
                     <Menu id='menu' anchorEl={anchorEl} open={open}
                         onClose={handleClose}
-                        menulistprops={{ 'aria-labelledby': 'menu-button' }}    
+                        menulistprops={{ 'aria-labelledby': 'menu-button' }}
                     >
-                        <MenuItem onClick={handleClose}><Link to='/'><Typography sx={{ color: 'primary.main' }}>Show</Typography></Link></MenuItem>
-                        <MenuItem onClick={handleClose}><Link to='/Cast'><Typography sx={{ color: 'primary.main' }}>Cast</Typography></Link></MenuItem>
+                        <MenuItem onClick={handleClose}><Link to='/Show'><Typography sx={{ color: 'primary.main', fontWeight: 'bold' }}>Show</Typography></Link></MenuItem>
+                        <MenuItem onClick={handleClose}><Link to='/Cast'><Typography sx={{ color: 'primary.main', fontWeight: 'bold' }}>Cast</Typography></Link></MenuItem>
                     </Menu>
                 </Toolbar>
             </AppBar>

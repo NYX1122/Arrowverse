@@ -10,7 +10,10 @@ var theme = createTheme({
             main: '#53b664',
         },
         secondary: {
-            main: '#002006',
+            main: '#000000',
+        },
+        tertiary: {
+            main: '#ffffff'
         },
         info: {
             main: '#52f9ff',
@@ -19,13 +22,20 @@ var theme = createTheme({
             main: '#52f9ff',
         },
         background: {
-            default: '#fafafa',
+            default: '#5ecc70',
         },
     },
     components: {
         MuiTypography: {
             defaultProps: {
                 fontFamily: font
+            }
+        },
+        MuiMenu: {
+            styleOverrides: {
+                list: {
+                   backgroundColor: '#000000'
+                }
             }
         }
     }

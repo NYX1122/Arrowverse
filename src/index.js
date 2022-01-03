@@ -7,6 +7,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import CastPage from './pages/CastPage';
+import MainShowPage from './pages/MainShowPage';
 
 const rootElement = document.getElementById('root');
 render(
@@ -14,6 +15,7 @@ render(
     <Routes>
       <Route path="/" element={<App/>}>
         <Route path='Cast' element={<CastPage />} />
+        <Route path='Show' element={<MainShowPage />} />
         <Route path="*" element={
           <main style={{ padding: "1rem" }}>
             <p>There's nothing here!</p>
