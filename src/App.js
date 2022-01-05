@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 
 import './App.css';
 import theme from './theme.js';
@@ -13,6 +13,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 function App() {
   const [showData, setData] = useState(null);
+  let location = useLocation();
 
   useEffect(() => {
     fetch('https://api.tvmaze.com/lookup/shows?imdb=tt2193021')
@@ -29,7 +30,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Header></Header>
-        <MovieCard cardData={{ showData }}></MovieCard>
+        {location.pathname === '/' && <MovieCard cardData={{ showData }}></MovieCard>}
       </ThemeProvider>
       <Outlet/>
     </Box>

@@ -18,7 +18,7 @@ function Header() {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar sx={{ backgroundColor: '#000000' }}>
-                    <Typography sx={{ variant: 'h1', display: 'flex', fontWeight: 'bold', fontSize: 40, textAlign: 'left', flexGrow: 1, color: 'primary.main'}}>ShowViewer</Typography>
+                    <Typography sx={{ variant: 'h1', display: 'flex', fontWeight: 'bold', fontSize: 40, textAlign: 'left', flexGrow: 1, color: 'primary.main'}}><Link to='/'>ShowViewer</Link></Typography>
                     <IconButton size='large' id='menu-button' sx={{ color: 'primary.main' }}
                         aria-controls={open ? 'menu' : undefined}
                         aria-haspopup='true'

@@ -8,17 +8,16 @@ import reportWebVitals from './reportWebVitals';
 
 import CastPage from './pages/CastPage';
 import MainShowPage from './pages/MainShowPage';
-import LandingPage from './pages/LandingPage';
 
 const rootElement = document.getElementById('root');
+
 render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App/>}>
+      <Route path='/' element={<App/>}>
         <Route path='Cast' element={<CastPage />} />
         <Route path='Show' element={<MainShowPage />} />
-        <Route path='Landing' element={<LandingPage />} />
-        <Route path="*" element={
+        <Route path='*' element={
           <main style={{ padding: "1rem" }}>
             <p>There's nothing here!</p>
           </main>
