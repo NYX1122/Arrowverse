@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-import { Typography, Grid } from '@mui/material';
+import { Grid, Container } from '@mui/material';
 
 import Loader from '../components/Loader';
+import CastCard from '../components/CastCard';
 
 export default function CastPage() {
     const [castData, setData] = useState(null);
@@ -16,20 +17,23 @@ export default function CastPage() {
     while (!castData) {
       return <Loader></Loader>
     }
-
+    console.log(castData);
     return (
-        <Grid container spacing={1} justifyContent='space-between'>
-            {castData.map((actor) => (
-                <CastCard
-                    character={actor.character.name}
-                    actor={actor.person.name}
-                    photo={actor.person.image.original}
-                    country={actor.person.country.name}
-                    birthday={actor.person.birthday}
-                    
-                >
-                </CastCard>
-            ))}
-        </Grid>
+        <Container sx={{ marginTop: '4%' }}>
+            <Grid container spacing={1} justifyContent='space-between'>
+                {castData.map((actor) => (
+                    <Grid item xs={6}>
+                        <CastCard
+                            name={actor.person.name}
+                            photo={actor.person.image.original}
+                            country={actor.person.country}
+                            birthday={actor.person.birthday}
+                            gender={actor.person.gender}
+                        >
+                        </CastCard>
+                    </Grid>
+                ))}
+            </Grid>
+        </Container>
     );
 }
