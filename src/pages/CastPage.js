@@ -6,15 +6,15 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 import Loader from '../components/Loader';
 import CastCard from '../components/CastCard';
-import { act } from 'react-dom/cjs/react-dom-test-utils.production.min';
 
 export default function CastPage() {
     const [castData, setData] = useState(null);
+    const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
-      fetch('https://api.tvmaze.com/shows/4/cast')
-       .then(response => response.json())
-       .then(data => setData(data));
+        fetch('https://api.tvmaze.com/shows/4/cast')
+            .then(response => response.json())
+            .then(data => setData(data));
     }, []);
   
     //While statement used to give fetch enough time before page is rendered.
