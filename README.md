@@ -1,6 +1,6 @@
 ## Description 
 
-[ShowViewer](https://arrowshowviewer.herokuapp.com/) is a react web application that utilizes TVMAZE APIs to provide information regarding the television show, Arrow, and other shows as well in the future.
+[ShowViewer](https://arrowshowviewer.herokuapp.com/) is a react web application, stylized with Material UI, that utilizes TVMAZE APIs to provide information regarding the television show, Arrow.
 
 ## Table of Contents 
 
