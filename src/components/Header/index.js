@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Box, Typography, AppBar, Toolbar, IconButton, Menu, MenuItem } from '@mui/material';
+import { Container, Typography, AppBar, Toolbar, IconButton, Menu, MenuItem, Grid } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
 function Header() {
@@ -15,28 +15,32 @@ function Header() {
     };
 
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
-                <Toolbar sx={{ backgroundColor: '#000000' }}>
-                    <Typography sx={{ variant: 'h1', display: 'flex', fontWeight: 'bold', fontSize: 40, textAlign: 'left', flexGrow: 1, color: 'primary.main'}}><Link to='/'>ShowViewer</Link></Typography>
-                    <IconButton size='large' id='menu-button' sx={{ color: 'primary.main' }}
-                        aria-controls={open ? 'menu' : undefined}
-                        aria-haspopup='true'
-                        aria-expanded={open ? 'true' : undefined}
-                        onClick={handleClick}
-                    >
-                        <MenuIcon/>
-                    </IconButton>
-                    <Menu id='menu' anchorEl={anchorEl} open={open}
-                        onClose={handleClose}
-                        menulistprops={{ 'aria-labelledby': 'menu-button' }}
-                    >
-                        <MenuItem onClick={handleClose}><Link to='/Show'><Typography sx={{ color: 'primary.main', fontWeight: 'bold' }}>Show</Typography></Link></MenuItem>
-                        <MenuItem onClick={handleClose}><Link to='/Cast'><Typography sx={{ color: 'primary.main', fontWeight: 'bold' }}>Cast</Typography></Link></MenuItem>
-                    </Menu>
-                </Toolbar>
-            </AppBar>
-        </Box>
+        <AppBar position='static'>
+            <Toolbar sx={{ backgroundColor: '#000000'}}>
+                <Grid container spacing={0} justifyContent='space-between' alignItems='center'>
+                    <Grid item xs={10} sm={11}>
+                        <Typography fontSize={{ xs: 35, md: 50 }} sx={{ variant: 'h1', fontWeight: 'bold', textAlign: 'left', color: 'primary.main'}}><Link to='/'>ShowViewer</Link></Typography>
+                    </Grid>
+                    <Grid item xs={2} sm={1}>
+                        <IconButton size='large' id='menu-button' sx={{ color: 'primary.main' }}
+                            aria-controls={open ? 'menu' : undefined}
+                            aria-haspopup='true'
+                            aria-expanded={open ? 'true' : undefined}
+                            onClick={handleClick}
+                        >
+                            <MenuIcon sx={{ fontSize: 40 }} />
+                        </IconButton>
+                        <Menu id='menu' anchorEl={anchorEl} open={open}
+                            onClose={handleClose}
+                            menulistprops={{ 'aria-labelledby': 'menu-button' }}
+                        >
+                            <MenuItem onClick={handleClose}><Link to='/Show'><Typography sx={{ color: 'primary.main', fontWeight: 'bold' }}>Show</Typography></Link></MenuItem>
+                            <MenuItem onClick={handleClose}><Link to='/Cast'><Typography sx={{ color: 'primary.main', fontWeight: 'bold' }}>Cast</Typography></Link></MenuItem>
+                        </Menu>
+                    </Grid>
+                </Grid>
+            </Toolbar>
+        </AppBar>
     );
 }
 

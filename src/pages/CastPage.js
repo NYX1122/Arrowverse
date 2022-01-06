@@ -61,22 +61,22 @@ export default function CastPage() {
     
     return (
         <Container sx={{ marginTop: 1 }}>
-            <Grid container spacing={0} justifyContent='space-between' alignItems='center' sx={{ marginBottom: 1 }}>
-                <Grid item xs={6}>
-                    <Typography sx={{ fontWeight: 'bolder', fontSize: 18 }}>Export Cast Data</Typography>
+            <Grid container spacing={0} justifyContent='flex-end' alignItems='center' sx={{ marginBottom: 1 }}>
+                <Grid item xs={5} sm={3} md={2}>
+                    <Typography fontSize={{ xs: 18, md: 22 }} sx={{ fontWeight: 'bolder' }}>Export Cast Data</Typography>
                 </Grid>
-                <Grid item xs={3}>
-                    <ArrowForwardIcon></ArrowForwardIcon>
-                    <ArrowForwardIcon></ArrowForwardIcon>
-                    <ArrowForwardIcon></ArrowForwardIcon>
+                <Grid item xs={4} sm={4} md={2}>
+                    <ArrowForwardIcon sx={{ fontSize: 33 }}></ArrowForwardIcon>
+                    <ArrowForwardIcon sx={{ fontSize: 33 }}></ArrowForwardIcon>
+                    <ArrowForwardIcon sx={{ fontSize: 33 }}></ArrowForwardIcon>
                 </Grid>
-                <Grid item xs={3}>
-                    <CSVLink {...csvReport}><Button variant='outlined' sx={{ backgroundColor: 'primary.main', borderColor: 'secondary.main', fontWeight: 'bolder', color: 'secondary.main' }}>Export</Button></CSVLink>
+                <Grid item xs={3} sm={2} md={1}>
+                    <CSVLink {...csvReport}><Button size='medium' variant='outlined' sx={{ backgroundColor: 'primary.main', borderColor: 'secondary.main', fontWeight: 'bolder', color: 'secondary.main' }}>Export</Button></CSVLink>
                 </Grid>
             </Grid>
-            <Grid container spacing={1} justifyContent='space-between'>
+            <Grid container spacing={{ xs: 1, sm: 2 }} justifyContent={{ xs: 'space-between', sm: 'space-evenly' }}>
                 {newCastData.map((actor, i) => (
-                    <Grid item xs={6} key={i}>
+                    <Grid item xs={6} md={4} lg={3} key={i}>
                         <CastCard
                             name={actor.person.name}
                             photo={actor.person.image.original}

@@ -25,8 +25,6 @@ export default function MainShowPage() {
         return <Loader></Loader>
     }
 
-    console.log(showData);
-
     const names = [];
     castData.map((actor) => {
         names.push(actor.person.name);
@@ -34,9 +32,9 @@ export default function MainShowPage() {
     const uniqueNames = [...new Set(names)];
 
     return (
-        <Container sx={{ marginTop: 1 }}>
+        <Container maxWidth='sm' sx={{ marginTop: 3 }}>
             <Card>
-                <CardContent sx={{ backgroundColor: 'primary.main', padding: 1 }}>
+                <CardContent sx={{ backgroundColor: 'primary.main' }}>
                     <Grid container spacing={0} justifyContent='space-between' alignItems='center'>
                         <Grid item xs={7}>
                             <Typography variant='h2' sx={{ fontWeight: 'bold', textAlign: 'left' }}>{showData.name}</Typography>
@@ -71,7 +69,7 @@ export default function MainShowPage() {
                             <Grid container spacing={3}>
                                 {uniqueNames.map((actor, i) => (
                                     <Grid item xs={3} key={i}>
-                                        <Typography sx={{ fontWeight: 'bold', fontSize: 14 }}>{actor}</Typography>
+                                        <Typography fontSize={{ xs: 16 }} sx={{ fontWeight: 'bold' }}>{actor}</Typography>
                                     </Grid>
                                 ))}
                             </Grid>

@@ -26,7 +26,7 @@ function App() {
   }
 
   return (
-    <Box className="App" sx={{ minHeight: '100vh' }}>
+    <Box className='App' sx={{ minHeight: '100vh' }}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Header></Header>
@@ -37,4 +37,4 @@ function App() {
   );
 }
 
-export default App;
+export default App

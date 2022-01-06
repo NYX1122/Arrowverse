@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent, CardMedia, Button, Typography, Container, Grid } from '@mui/material';
 
 function MovieCard({ cardData: { showData } }) {
-    console.log(showData);
 
     return (
-        <Container sx={{ padding: '5%' }}>
+        <Container maxWidth='sm' sx={{ paddingTop: 5 }}>
             <Card>
                 <CardMedia component='img' height='auto' image={showData.image.original} alt={showData.name} />
                 <CardContent sx={{ backgroundColor: 'primary.main' }}>
