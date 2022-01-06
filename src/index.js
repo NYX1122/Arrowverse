@@ -19,7 +19,7 @@ const rootElement = document.getElementById('root');
 render(
   <Box className='App' sx={{ minHeight: '100vh' }}>
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
+      <BrowserRouter basename='/ShowViewer/'>
         <Routes>
           <Route path='/' element={<App/>}>
             <Route path='Cast' element={<CastPage />} />
